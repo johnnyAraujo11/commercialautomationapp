@@ -1,31 +1,41 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import model.SystemFacade;
 
 public class LoginController implements Initializable {
 
 	@FXML
-	private Button bntLogar;
+	protected Button btnLogar;
 
 	@FXML
-	private Button btnRegisterUser;
+	protected Button btnRegisterUser;
 	@FXML
-	private TextField password;
+	protected TextField password;
 
 	@FXML
-	private TextField userName;
+	protected TextField userName;
 
 	@FXML
 	void onClickLogar(ActionEvent event) {
-			
+		SystemFacade facadeLogin = new SystemFacade();
+		System.out.println(facadeLogin.login(this.userName.getText(), this.password.getText()));
+		
+		Main.changeScreen("managements");
 	}
 
 	@FXML
@@ -36,8 +46,8 @@ public class LoginController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
-		
 	}
+
+
 
 }

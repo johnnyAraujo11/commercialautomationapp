@@ -48,6 +48,14 @@ public class ManagementUsers extends Management {
 		}
 	}
 
+	public static String getPrefixmanager() {
+		return PREFIXMANAGER;
+	}
+
+	public static String getPrefixemployee() {
+		return PREFIXEMPLOYEE;
+	}
+
 	/**
 	 * Exibe a lista de usuários.
 	 */
