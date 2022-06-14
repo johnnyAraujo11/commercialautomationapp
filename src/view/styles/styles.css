@@ -1,0 +1,14 @@
+#userName{
+	-fx-border-color: red;
+	
+}
+
+
+
+#btnLogar:hover{
+	-fx-border-color: yellow
+}
+
+
+
+

@@ -8,12 +8,15 @@ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de
 de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
 do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
 ******************************************************************************************/
-package model;
+package model.DAO;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.UUID;
+
+import model.DataBase.DataBaseUsers;
+import model.entitysSystem.Entity;
 
 /**
  * Classe abstrata <b>'Management'</b> é reponsável pela criação dos métodos e
@@ -36,6 +39,7 @@ public abstract class Management {
 	 * produtos, funcionário, fornecedor...
 	 */
 	private LinkedList<Entity> listEntity;
+	
 
 	public Management() {
 		this.hash = new HashMap<String, String>();

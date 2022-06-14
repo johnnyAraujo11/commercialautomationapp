@@ -1,4 +1,4 @@
-package model;
+package model.entitysSystem;
 
 public class Client {
 	private String cpf;

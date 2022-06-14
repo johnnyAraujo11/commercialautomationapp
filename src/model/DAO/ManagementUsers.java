@@ -8,9 +8,13 @@ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de
 de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
 do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
 ******************************************************************************************/
-package model;
+package model.DAO;
 
 import java.util.LinkedList;
+
+import model.entitysSystem.Employee;
+import model.entitysSystem.Entity;
+import model.entitysSystem.Manager;
 
 /**
  * <b> A classe ManagementUsers </b> define um tipo de dado que será utilizado
@@ -56,6 +60,16 @@ public class ManagementUsers extends Management {
 		return PREFIXEMPLOYEE;
 	}
 
+	private static ManagementUsers mU = new ManagementUsers();
+	
+	private ManagementUsers() {
+		
+	}
+	
+	public static ManagementUsers getInstance() {
+		return mU;
+	}
+	
 	/**
 	 * Exibe a lista de usuários.
 	 */
@@ -127,10 +141,5 @@ public class ManagementUsers extends Management {
 		return super.delete(id);
 	}
 	
-	
-	public boolean verifyUser(String user, String password) {
-		
-		return false;
-	}
 
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="348.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagementController">
+   <children>
+      <Pane layoutX="-3.0" prefHeight="450.0" prefWidth="568.0">
+         <children>
+            <MenuBar fx:id="menuBar" layoutX="2.0" layoutY="1.0" prefHeight="27.0" prefWidth="565.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Gerenciamentos">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Usuarios" />
+                        <MenuItem mnemonicParsing="false" text="Produtos" />
+                        <MenuItem mnemonicParsing="false" text="Fornecedores" />
+                        <MenuItem mnemonicParsing="false" text="clientes" />
+                        <MenuItem mnemonicParsing="false" text="Itens" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatorios">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Fornecedores por produtos" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

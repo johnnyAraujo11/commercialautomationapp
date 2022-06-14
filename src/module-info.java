@@ -4,6 +4,6 @@ module commercialautomationapp {
 	requires javafx.fxml;
 	requires javafx.base;
 	
-	opens controller to javafx.graphics, javafx.fxml;
+	opens controllers to javafx.graphics, javafx.fxml;
 	exports application;
 }
