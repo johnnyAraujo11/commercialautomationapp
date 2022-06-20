@@ -60,7 +60,7 @@ public abstract class Management {
 	}
 
 	/**
-	 * Lista todos as entidades presentes na lista
+	 * Lista todos as entidades presentes na lista.
 	 */
 	protected boolean show() {
 		if (this.listEntity.size() == 0) {
@@ -74,7 +74,7 @@ public abstract class Management {
 	}
 
 	/**
-	 * Remove uma entidade a partir de um id especificado
+	 * Remove uma entidade a partir de um id especificado.
 	 * 
 	 * @param id
 	 */
@@ -90,12 +90,16 @@ public abstract class Management {
 		return obj;
 	}
 
+	/**
+	 * Retorna a lista de entidade.
+	 * @return
+	 */
 	public LinkedList<Entity> getListEntity() {
 		return this.listEntity;
 	}
 
 	/**
-	 * Gera uma string no formato UUID
+	 * Gera uma string no formato UUID.
 	 * 
 	 * @param prefix
 	 * @return retorna uma string, por exemplo,

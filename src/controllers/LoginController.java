@@ -24,12 +24,12 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.DAO.ManagementUsers;
-import model.commercialautomationfacade.CommercialAutomationFacade;
+import model.commercialautomationfacade.FacadeUsers;
 import model.entitysSystem.Entity;
 import model.exceptions.LoginException;
 
 public class LoginController implements Initializable {
-
+	FacadeUsers facadeUsers = new FacadeUsers();
 	@FXML
 	private Button backLogin;
 
@@ -59,35 +59,38 @@ public class LoginController implements Initializable {
 
 	@FXML
 	void onClickLogar(ActionEvent event) {
-		CommercialAutomationFacade commercialfacade = new CommercialAutomationFacade();
-		
 		ManagementUsers managUsers = ManagementUsers.getInstance();
-		
+		boolean check;
 		Class<? extends Entity> typeUser;
-		
-		try {
-			typeUser = commercialfacade.loginUser(userName.getText(), password.getText());
-			
-			if (typeUser.getSimpleName().equals("Manager")) {
-				Main.changeScreen("managements");
+
+		check = facadeUsers.checkRegister(false, userName.getText(), password.getText(), password1.getText(), checkManager,
+				checkEmployee);
+		if(check) {
+			try {
+				typeUser = facadeUsers.loginUser(userName.getText(), password.getText());
 				
-			} else if (typeUser.getSimpleName().equals("Employee")) {
-				// Adicionar o caminho
+				if (typeUser.getSimpleName().equals("Manager")) {
+					Main.changeScreen("managements");
+				} else if (typeUser.getSimpleName().equals("Employee")) {
+					// Adicionar o caminho
+				}
+			} catch (LoginException e) {
+				clearFields();
+				Main.erroUser("Usuário incorreto");
 			}
-		} catch (LoginException e) {
-			// e.printStackTrace();
-			clearFields();
-			Main.erroUser("Usuário incorreto");
 		}
 	}
 
 	@FXML
 	void onClickConfirmRegister(ActionEvent event) {
-		CommercialAutomationFacade commercialfacade = new CommercialAutomationFacade();
-		commercialfacade.checkRegister(userName.getText(), password.getText(), password1.getText(), checkManager,
-				checkEmployee);
-		commercialfacade.registerUser(userName.getText(), password.getText(), checkManager, checkEmployee);
-		clearFields();
+		boolean check;
+		check = facadeUsers.checkRegister(true, userName.getText(), password.getText(), password1.getText(),
+				checkManager, checkEmployee);
+		
+		if (check) {
+			facadeUsers.registerUser(userName.getText(), password.getText(), checkManager, checkEmployee);			
+			clearFields();
+		}
 	}
 
 	@FXML
@@ -116,7 +119,7 @@ public class LoginController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+		System.out.println("controle login");
 		settingsInitial();
 
 	}
@@ -141,7 +144,7 @@ public class LoginController implements Initializable {
 		btnRegisterUser.setVisible(true);
 		btnRegisterUser.setDisable(false);
 	}
-	
+
 	public void clearFields() {
 		userName.setText("");
 		password.setText("");

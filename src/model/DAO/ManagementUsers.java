@@ -25,7 +25,7 @@ import model.entitysSystem.Manager;
  * @version 3.0
  * @author Johnny Araujo e Lyrton Marcell
  *
- */ 
+ */
 public class ManagementUsers extends Management {
 	/**
 	 * Atributo constante que representa o prefixo de um gerente
@@ -35,6 +35,11 @@ public class ManagementUsers extends Management {
 	 * Atributo constante que representa o prefixo de um funcionário
 	 */
 	private static final String PREFIXEMPLOYEE = "Empl-";
+	/**
+	 * Inicializa a classes dentro dela mesma como static, assim qualquer parte
+	 * do código irá utilizar a mesma instância.
+	 */
+	private static ManagementUsers mU = new ManagementUsers();
 
 	/**
 	 * Registra o usuário gerando os prefixos adequados para cada cargo ocupado
@@ -60,16 +65,19 @@ public class ManagementUsers extends Management {
 		return PREFIXEMPLOYEE;
 	}
 
-	private static ManagementUsers mU = new ManagementUsers();
-	
 	private ManagementUsers() {
-		
+
 	}
-	
+
+	/**
+	 * Retorna a variável instanciada na própria classe.
+	 * 
+	 * @return tipo ManagementUsers
+	 */
 	public static ManagementUsers getInstance() {
 		return mU;
 	}
-	
+
 	/**
 	 * Exibe a lista de usuários.
 	 */
@@ -102,7 +110,6 @@ public class ManagementUsers extends Management {
 					}
 				}
 			}
-
 		}
 	}
 
@@ -135,11 +142,10 @@ public class ManagementUsers extends Management {
 	/**
 	 * Deleta o usuário relacionado ao id passado por parâmetro.
 	 * 
-	 * @param id recebe o id 
+	 * @param id recebe o id
 	 */
 	public Entity delete(String id) {
 		return super.delete(id);
 	}
-	
 
 }

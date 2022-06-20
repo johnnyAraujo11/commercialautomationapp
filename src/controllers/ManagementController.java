@@ -15,7 +15,7 @@ public class ManagementController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println(menuBar.getMenus().get(0).getText());
+		System.out.println("Controle gerenciamentos");
 	}
 
 }

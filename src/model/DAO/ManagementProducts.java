@@ -34,7 +34,7 @@ public class ManagementProducts extends Management {
 	 * Atributo constante que representa o prefixo de um produto
 	 */
 	private static final String PREFIX = "prod-";
-
+	
 	/**
 	 * Inicia o contrutor da superclasse
 	 */
