@@ -21,7 +21,6 @@ public class ManagmentClients extends Management {
 	}
 
 	
-	
 	public void register(Client client) {
 		super.register(client, PREFIXCLIENT);
 	}

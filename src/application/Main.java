@@ -18,7 +18,7 @@ public class Main extends Application {
 	private static Stage stage;
 	private static Scene mainScene;
 	private static Scene managements;
-
+	private static Scene managementProvider;
 	@Override
 	public void start(@SuppressWarnings("exports") Stage primaryStage) {
 		try {
@@ -31,6 +31,9 @@ public class Main extends Application {
 
 			Parent fxmlManagment = FXMLLoader.load(getClass().getResource("/view/Managements.fxml"));
 			managements = new Scene(fxmlManagment);
+			
+			Parent fxmlManagementProvider = FXMLLoader.load(getClass().getResource("/view/provider/Provider.fxml"));
+			managementProvider = new Scene(fxmlManagementProvider);
 
 			primaryStage.setScene(mainScene);
 			primaryStage.show();

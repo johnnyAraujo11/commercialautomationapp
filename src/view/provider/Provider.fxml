@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagementProvider">
    <children>
       <Pane layoutX="21.0" layoutY="15.0" prefHeight="233.0" prefWidth="104.0">
          <children>
@@ -20,25 +19,25 @@
       </Pane>
       <Pane layoutX="140.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <TextField layoutX="15.0" layoutY="14.0" maxWidth="170.0" promptText="ex.: LTDA. Alimentos" />
-            <TextField layoutX="15.0" layoutY="50.0" maxWidth="170.0" promptText="ex.: 72.501.551/0001-40" />
-            <TextField layoutX="15.0" layoutY="85.0" maxWidth="170.0" promptText="ex.: Quinze de Novembro" />
-            <Button layoutX="60.0" layoutY="149.0" mnemonicParsing="false" text="cadastrar" />
+            <TextField fx:id="userName" layoutX="15.0" layoutY="14.0" maxWidth="170.0" promptText="ex.: LTDA. Alimentos" />
+            <TextField fx:id="cnpj" layoutX="15.0" layoutY="50.0" maxWidth="170.0" promptText="ex.: 72.501.551/0001-40" />
+            <TextField fx:id="address" layoutX="15.0" layoutY="85.0" maxWidth="170.0" promptText="ex.: Quinze de Novembro" />
+            <Button fx:id="register" layoutX="60.0" layoutY="149.0" mnemonicParsing="false" onAction="#onClickRegister" text="cadastrar" />
          </children>
       </Pane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <ListView layoutX="386.0" layoutY="31.0" prefHeight="289.0" prefWidth="200.0" />
+      <ListView fx:id="listProviders" layoutX="386.0" layoutY="31.0" prefHeight="289.0" prefWidth="200.0" />
       <Text layoutX="420.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de fornecedores" />
       <HBox layoutX="386.0" layoutY="325.0" prefHeight="61.0" prefWidth="200.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Excluir" />
+                  <Button mnemonicParsing="false" onAction="#onClickDelete" text="Excluir" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Editar" />
+                  <Button mnemonicParsing="false" onAction="#onClickEdit" text="Editar" />
                </children>
             </HBox>
          </children>
