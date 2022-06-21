@@ -81,8 +81,8 @@ public class ManagementUsers extends Management {
 	/**
 	 * Exibe a lista de usuários.
 	 */
-	public boolean show() {
-		return super.show();
+	public LinkedList<Entity> getAll() {
+		return super.getListEntity();
 	}
 
 	/**

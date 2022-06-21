@@ -6,29 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="348.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagementController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagementController">
    <children>
-      <Pane layoutX="-3.0" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <MenuBar fx:id="menuBar" layoutY="1.0" prefHeight="27.0" prefWidth="600.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Gerenciamentos">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Usuarios" />
-                        <MenuItem mnemonicParsing="false" text="Produtos" />
-                        <MenuItem mnemonicParsing="false" text="Fornecedores" />
-                        <MenuItem mnemonicParsing="false" text="clientes" />
-                        <MenuItem mnemonicParsing="false" text="Itens" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Relatorios">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Fornecedores por produtos" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </children>
-      </Pane>
+      <MenuBar fx:id="menuBar" prefHeight="27.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Gerenciamentos">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Usuarios" />
+                  <MenuItem mnemonicParsing="false" text="Produtos" />
+                  <MenuItem mnemonicParsing="false" text="Fornecedores" />
+                  <MenuItem mnemonicParsing="false" text="clientes" />
+                  <MenuItem mnemonicParsing="false" text="Itens" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Relatorios">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Fornecedores por produtos" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="1.0" layoutY="28.0" prefHeight="373.0" prefWidth="600.0" />
    </children>
 </AnchorPane>

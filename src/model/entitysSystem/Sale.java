@@ -25,6 +25,9 @@ import java.util.LinkedList;
  *
  */
 public class Sale extends Entity {
+	
+	private int clientNote;
+	
 	/**
 	 * Data e hora da venda
 	 */

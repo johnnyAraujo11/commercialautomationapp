@@ -24,12 +24,12 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.DAO.ManagementUsers;
-import model.commercialautomationfacade.FacadeUsers;
+import model.commercialautomationfacade.FacadeLogin;
 import model.entitysSystem.Entity;
 import model.exceptions.LoginException;
 
 public class LoginController implements Initializable {
-	FacadeUsers facadeUsers = new FacadeUsers();
+	FacadeLogin facadeUsers = new FacadeLogin();
 	@FXML
 	private Button backLogin;
 

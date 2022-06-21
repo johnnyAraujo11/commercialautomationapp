@@ -100,12 +100,10 @@ public class ManagementProviders extends Management {
 	public Provider findProvider(String id) {
 		for(int i = 0; i < super.getListEntity().size(); i++) {
 			if (id.equals(super.getListEntity().get(i).getId())) {
-				System.out.println("Encontrou o forn");
 				return ((Provider)super.getListEntity().get(i));
 			}
 		}
 		return null;
-
 	}
 
 }

@@ -9,11 +9,11 @@ import model.entitysSystem.Entity;
 import model.entitysSystem.Manager;
 import model.exceptions.LoginException;
 
-public class FacadeUsers {
+public class FacadeLogin {
 	private CheckLoginUser login;
 	private ManagementUsers managUsers = ManagementUsers.getInstance();
 
-	public FacadeUsers() {
+	public FacadeLogin() {
 		this.login = new CheckLoginUser();
 	}
 
@@ -75,7 +75,7 @@ public class FacadeUsers {
 	/**
 	 * Registra um usuário na lista de usuários
 	 * 
-	 * @param userName      Recbe o nome do usuário
+	 * @param userName      Recebe o nome do usuário
 	 * @param password      Recebe a senha do usuário
 	 * @param checkManager  Tipo gerente
 	 * @param checkEmployee Tipo funcionáio

@@ -22,7 +22,7 @@ import model.exceptions.ManagementProductsException;
 /**
  * Classe é responsável por gerenciar um produto fazendo edicão dos seus
  * atribuitos, armazenando um produto em lista e deletando um produto presente
- * na lista
+ * na lista.
  * 
  * @since 11/03/2022
  * @version 3.0
@@ -49,7 +49,6 @@ public class ManagementProducts extends Management {
 	 * @param listProducts
 	 */
 	public void updateProductsStock(LinkedList<Entity> listItem) throws ManagementProductsException {
-		
 		// lista de items
 		for (int i = 0; i < listItem.size(); i++) { 
 			ItemMenu item = ((ItemMenu)listItem.get(i));
